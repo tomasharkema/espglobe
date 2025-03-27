@@ -3,7 +3,7 @@ from machine import Pin
 from ota import OTAUpdater
 from WIFI_CONFIG import SSID, PASSWORD
 
-firmware_url = "https://raw.githubusercontent.com/tomasharkema/espglobe/main"
+firmware_url = "https://raw.githubusercontent.com/tomasharkema/espglobe/"
  
 IN1 = Pin(13,Pin.OUT)
 IN2 = Pin(12,Pin.OUT)
