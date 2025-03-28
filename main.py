@@ -1,10 +1,9 @@
 import time
 from machine import Pin
 from ota import OTAUpdater
-from WIFI_CONFIG import SSID, PASSWORD
+from CONFIG import SSID, PASSWORD, FIRMWARE_URL
 
-firmware_url = "https://raw.githubusercontent.com/tomasharkema/espglobe/"
- 
+
 IN1 = Pin(13,Pin.OUT)
 IN2 = Pin(12,Pin.OUT)
 IN3 = Pin(27,Pin.OUT)
@@ -32,7 +31,7 @@ def set_pins_low(pins):
 def set_pins_high(pins):
     [pin.on() for pin in pins]
     
-ota_updater = OTAUpdater(SSID, PASSWORD, firmware_url, "main.py")
+ota_updater = OTAUpdater(SSID, PASSWORD, FIRMWARE_URL, "main.py")
 ota_updater.download_and_install_update_if_available()
     
 while True:
